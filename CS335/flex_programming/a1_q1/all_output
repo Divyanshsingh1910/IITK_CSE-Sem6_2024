@@ -1,0 +1,148 @@
+
+-----------
+Input file:
+-----------
+BEGIN
+    INTEGER x, y;
+    x := 10;
+    y := 20;
+    IF x GT y THEN
+        PRINT("x is greater than y");
+    ELSE
+        PRINT("y is greater than x");
+END
+
+--------------------
+Output lexeme stream
+--------------------
+-------------------------------------------------
+  TOKEN    |     COUNT   |        LEXEME       
+-------------------------------------------------
+  STRING           1        "x is greater than y"
+  STRING           1        "y is greater than x"
+  DELIMITER        2        (
+  DELIMITER        2        )
+  DELIMITER        1        ,
+  INTEGER          1        10
+  INTEGER          1        20
+  OPERATOR         2        :=
+  DELIMITER        5        ;
+  KEYWORD          1        BEGIN
+  KEYWORD          1        ELSE
+  KEYWORD          1        END
+  OPERATOR         1        GT
+  KEYWORD          1        IF
+  KEYWORD          1        INTEGER
+  IDENTIFIER       2        PRINT
+  KEYWORD          1        THEN
+  IDENTIFIER       3        x
+  IDENTIFIER       3        y
+
+-----------
+Input file:
+-----------
+BEGIN
+    INTEGER x, y, sum;
+    x := 3;
+    y := 5;
+    sum := x + y;
+    PRINT("Sum of ", x, " and ", y, " is ", sum);
+END
+
+--------------------
+Output lexeme stream
+--------------------
+-------------------------------------------------
+  TOKEN    |     COUNT   |        LEXEME       
+-------------------------------------------------
+  STRING           1        " and "
+  STRING           1        " is "
+  STRING           1        "Sum of "
+  DELIMITER        1        (
+  DELIMITER        1        )
+  OPERATOR         1        +
+  DELIMITER        7        ,
+  INTEGER          1        3
+  INTEGER          1        5
+  OPERATOR         3        :=
+  DELIMITER        5        ;
+  KEYWORD          1        BEGIN
+  KEYWORD          1        END
+  KEYWORD          1        INTEGER
+  IDENTIFIER       1        PRINT
+  IDENTIFIER       3        sum
+  IDENTIFIER       4        x
+  IDENTIFIER       4        y
+
+-----------
+Input file:
+-----------
+BEGIN
+    INTEGER ARRAY numbers[1:5];
+    INTEGER i, sum;
+
+    FOR i := 1 STEP 1 UNTIL 5 DO
+        numbers[i] := i * 2;
+
+    sum := 0;
+    FOR i := 1 STEP 1 UNTIL 5 DO
+        sum := sum + numbers[i];
+
+    PRINT("Sum of array elements is ", sum);
+END
+
+--------------------
+Output lexeme stream
+--------------------
+-------------------------------------------------
+  TOKEN    |     COUNT   |        LEXEME       
+-------------------------------------------------
+  STRING           1        "Sum of array elements is "
+  DELIMITER        1        (
+  DELIMITER        1        )
+  OPERATOR         1        *
+  OPERATOR         1        +
+  DELIMITER        2        ,
+  HEXADECIMAL      1        0
+  INTEGER          5        1
+  INTEGER          1        2
+  INTEGER          3        5
+  DELIMITER        1        :
+  OPERATOR         5        :=
+  DELIMITER        6        ;
+  KEYWORD          1        ARRAY
+  KEYWORD          1        BEGIN
+  KEYWORD          2        DO
+  KEYWORD          1        END
+  KEYWORD          2        FOR
+  KEYWORD          2        INTEGER
+  IDENTIFIER       1        PRINT
+  KEYWORD          2        STEP
+  KEYWORD          2        UNTIL
+  DELIMITER        3        [
+  DELIMITER        3        ]
+  IDENTIFIER       6        i
+  IDENTIFIER       3        numbers
+  IDENTIFIER       5        sum
+
+-----------
+Input file:
+-----------
+BEGIN
+    PRINT('Hello, World!');
+	{ This is a comment }
+END
+
+--------------------
+Output lexeme stream
+--------------------
+-------------------------------------------------
+  TOKEN    |     COUNT   |        LEXEME       
+-------------------------------------------------
+  STRING           1        'Hello, World!'
+  DELIMITER        1        (
+  DELIMITER        1        )
+  DELIMITER        1        ;
+  KEYWORD          1        BEGIN
+  KEYWORD          1        END
+  IDENTIFIER       1        PRINT

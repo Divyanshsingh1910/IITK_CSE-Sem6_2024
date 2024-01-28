@@ -1,0 +1,12 @@
+TOKEN           COUNT           LEXEME
+
+INT_LITERAL     1       +131
+REAL_LITERAL    1       +23.
+REAL_LITERAL    1       +37839.0
+REAL_LITERAL    1       +543.E-2
+REAL_LITERAL    1       -1.46390
+INT_LITERAL     1       -2639
+REAL_LITERAL    1       -431.d2
+REAL_LITERAL    1       .980e+2
+INT_LITERAL     1       431
+INT_LITERAL     1       67419

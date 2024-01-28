@@ -1,0 +1,9 @@
+Invalid string at line number 8:"yes, error on line 8
+
+TOKEN           COUNT           LEXEME
+
+CHAR_LITERAL    1       "error here? no
+not yet
+not here"
+CHAR_LITERAL    1       "ine 3"
+CHAR_LITERAL    1       "line 4"

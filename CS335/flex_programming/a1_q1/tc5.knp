@@ -1,0 +1,22 @@
+BEGIN
+    BOoLeAN isSumPositive;
+    InTeGeR x, y, sum;
+    x := 3;
+    y := -5;  { y is a negative number }
+    
+    sUm := x + y;
+    
+    { Check if the sum is positive }
+    IF sum GT 0 THEN
+        isSumPositive := TRUE;
+    ELSE
+        isSumPositive := FALSE;
+    ENDIF;
+    {{{}}}
+    0x012
+    0x455
+    0X7236
+    PRINt("The value of x is ", x);
+    PRiNT("The value of y is ", y);
+    PrINT("Sum is positive: ", isSumPositive);
+END

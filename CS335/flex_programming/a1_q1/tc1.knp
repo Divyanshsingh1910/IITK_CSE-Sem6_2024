@@ -1,0 +1,12 @@
+BEGIN
+    INTEGER x, y;
+    x := 10;
+    y := 20;
+    IF x GT y THEN
+        PRINT("x is greater than y");
+    ELSE
+        PRINT("y is greater than x");
+    eLse "asdfasdf asd fasd f'"
+END
+"hello"iitk
+"hello"abc' Begin end hello'

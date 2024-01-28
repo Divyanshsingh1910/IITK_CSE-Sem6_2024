@@ -1,0 +1,9 @@
+1
+NAME is set to Divyansh
+2
+AGE is set to 20
+3
+COLLEGE is set to IITK
+4
+CPI is set to 10
+This line is triggered

@@ -1,0 +1,6 @@
+Invalid string at line number 4:"now wrong here on line 4
+
+TOKEN           COUNT           LEXEME
+
+CHAR_LITERAL    1       "hemlo multiline string
+hemlo"

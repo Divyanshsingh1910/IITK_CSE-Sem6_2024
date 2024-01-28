@@ -1,0 +1,20 @@
+Token          Count     Lexeme         
+STRING         1         "x is greater than y"
+STRING         1         "y is greater than x"
+DELIMITER      2         (              
+DELIMITER      2         )              
+DELIMITER      1         ,              
+INTEGER        1         10             
+INTEGER        1         20             
+OPERATOR       2         :=             
+DELIMITER      5         ;              
+KEYWORD        1         BEGIN          
+KEYWORD        1         ELSE           
+KEYWORD        1         END            
+OPERATOR       1         GT             
+KEYWORD        1         IF             
+KEYWORD        1         INTEGER        
+IDENTIFIER     2         PRINT          
+KEYWORD        1         THEN           
+IDENTIFIER     3         x              
+IDENTIFIER     3         y              

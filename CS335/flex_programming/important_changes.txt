@@ -1,0 +1,6 @@
+* While storing the strings in the nodes, store them in lowercases
+* fix the pattern of excepting integers in first part
+* generate testcases for all type of tokens mentioned in the PS
+* tackle integer and hexadecimal in p1
+* tackle the '+' or '-' in front of numbers 
+* tackle the comparison waali chise

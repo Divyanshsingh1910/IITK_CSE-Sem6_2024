@@ -1,0 +1,33 @@
+Invalid string at line number 31:"
+
+TOKEN           COUNT           LEXEME
+
+SPECIAL_CHAR    1       #
+SPECIAL_CHAR    1       $
+OPERATOR        1       %
+OPERATOR        1       &
+SPECIAL_CHAR    1       '
+DELIMITER       1       (
+DELIMITER       1       )
+OPERATOR        1       *
+OPERATOR        1       +
+SPECIAL_CHAR    1       ,
+OPERATOR        1       -
+SPECIAL_CHAR    1       .
+OPERATOR        1       /
+SPECIAL_CHAR    1       :
+SPECIAL_CHAR    1       ;
+OPERATOR        1       <
+OPERATOR        1       =
+OPERATOR        1       >
+SPECIAL_CHAR    1       ?
+SPECIAL_CHAR    1       @
+DELIMITER       1       [
+SPECIAL_CHAR    1       \
+DELIMITER       1       ]
+SPECIAL_CHAR    1       ^
+SPECIAL_CHAR    1       `
+SPECIAL_CHAR    1       {
+SPECIAL_CHAR    1       |
+SPECIAL_CHAR    1       }
+SPECIAL_CHAR    1       ~

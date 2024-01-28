@@ -1,0 +1,7 @@
+BEGIN
+    INTEGER x, y, sum;
+    x := 3;
+    y := 5;
+    sum := x + y;
+    PRINT("Sum of ", x, " and ", y, " is ", sum);
+END

@@ -1,0 +1,13 @@
+BEGIN
+    INTEGER ARRAY numbers[1:5];
+    INTEGER i, sum;
+
+    FOR i := 1 STEP 1 UNTIL 5 DO
+        numbers[i] := i * 2;
+
+    sum := 0;
+    FOR i := 1 STEP 1 UNTIL 5 DO
+        sum := sum + numbers[i];
+
+    PRINT("Sum of array elements is ", sum);
+END

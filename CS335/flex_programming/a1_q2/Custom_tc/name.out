@@ -1,0 +1,5 @@
+TOKEN           COUNT           LEXEME
+
+NAME            1       aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+NAME            1       abcdefghijklmnopqrstuvwxyz_1234567890
+KEYWORD         1       allocate

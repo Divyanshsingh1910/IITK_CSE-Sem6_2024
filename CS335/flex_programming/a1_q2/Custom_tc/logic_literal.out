@@ -1,0 +1,8 @@
+TOKEN           COUNT           LEXEME
+
+SPECIAL_CHAR    1       .
+LOGICAL_LITERAL 2       .FalsE.
+LOGICAL_LITERAL 2       .TRUE.
+LOGICAL_LITERAL 2       .false.
+LOGICAL_LITERAL 2       .trUE.
+NAME            1       false

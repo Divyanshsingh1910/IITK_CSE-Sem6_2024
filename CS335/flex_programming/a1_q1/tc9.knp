@@ -1,0 +1,18 @@
+BEGIN
+    INTEGER x, y;
+    x := 10;
+    y := 20;
+    IF x GT y THEN
+        PRINT("x is greater than y");
+    ELSE
+        PRINT("y is greater than x");
+    bEgIn ("aoenfpwueansf sd")
+    pRinT 0.56758
+    0.7676567877
+    0x0000
+    0x456576789
+    0x012
+    0xA53
+    0Xa64
+    0x0yfg
+END

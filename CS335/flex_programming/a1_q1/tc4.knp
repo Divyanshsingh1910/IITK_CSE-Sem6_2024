@@ -1,0 +1,7 @@
+BEGIN
+    PRINT('Hello, World!');
+    <<
+    >>
+    <=
+    >=
+END

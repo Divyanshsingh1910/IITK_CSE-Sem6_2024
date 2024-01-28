@@ -1,0 +1,10 @@
+-------------------------------------------------
+  TOKEN    |     COUNT   |        LEXEME       
+-------------------------------------------------
+  STRING           1        'Hello, World!'
+  DELIMITER        1        (
+  DELIMITER        1        )
+  DELIMITER        1        ;
+  KEYWORD          1        BEGIN
+  KEYWORD          1        END
+  IDENTIFIER       1        PRINT
