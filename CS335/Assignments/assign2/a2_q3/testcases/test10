@@ -1,0 +1,20 @@
+<quiz>
+<yah bhi garbage singleselect kachra1 
+marks kachra2 =  yha bhi kuda "2">
+How many grand slams has Roger Federer won?
+<choice> 24</choice>
+<choice> 20</choice>
+<choice> 20</choice>
+<choice>22</CHOICE>
+<correct>20</correct>
+</  singleselect>
+<multiselect 
+marks =  "7">
+How many grand slams has Roger Federer won?
+<choice>24</choice>
+<choice> 20</choice>
+<choice> 20</choice>
+<choice>22</CHOICE>
+<correct>20</correct>
+</  multiselect>
+</quiz>

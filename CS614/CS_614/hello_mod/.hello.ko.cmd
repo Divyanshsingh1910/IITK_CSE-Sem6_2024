@@ -1,0 +1,1 @@
+cmd_/home/divyansh/Desktop/CS_614/hello_mod/hello.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/divyansh/Desktop/CS_614/hello_mod/hello.ko /home/divyansh/Desktop/CS_614/hello_mod/hello.o /home/divyansh/Desktop/CS_614/hello_mod/hello.mod.o;  true

@@ -1,0 +1,1618 @@
+cscope 15 $HOME/Desktop/CS_614               0000009122
+	@chdev/simplecdev.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/kî√l.h
+>
+
+3 
+	~<löux/mm.h
+>
+
+4 
+	~<löux/mm_ty≥s.h
+>
+
+5 
+	~<löux/fûe.h
+>
+
+6 
+	~<löux/fs.h
+>
+
+7 
+	~<löux/∑th.h
+>
+
+8 
+	~<löux/¶ab.h
+>
+
+9 
+	~<löux/dˇche.h
+>
+
+10 
+	~<löux/sched.h
+>
+
+11 
+	~<löux/uac˚ss.h
+>
+
+12 
+	~<löux/fs_°ru˘.h
+>
+
+13 
+	~<asm/ébÊush.h
+>
+
+14 
+	~<löux/uac˚ss.h
+>
+
+15 
+	~<löux/devi˚.h
+>
+
+18 
+	#DEVNAME
+ "democdev"
+
+	)
+
+20 
+	gmaj‹
+;
+
+21 
+©omic_t
+ 
+	gdevi˚_›íed
+;
+
+22 
+	gcou¡_ªad
+;
+
+23 
+˛ass
+ *
+	gdemo_˛ass
+;
+
+24 
+devi˚
+ *
+	gdemo_devi˚
+;
+
+26 *
+	gd_buf
+ = 
+NULL
+;
+
+29 
+	$demo_›í
+(
+öode
+ *öode, 
+fûe
+ *file)
+
+31 
+	`©omic_öc
+(&
+devi˚_›íed
+);
+
+32 
+	`åy_moduÀ_gë
+(
+THIS_MODULE
+);
+
+33 
+	`¥ötk
+(
+KERN_INFO
+ "Device opened successfully\n");
+
+35 
+	}
+}
+
+37 
+	$demo_ªÀa£
+(
+öode
+ *öode, 
+fûe
+ *file)
+
+39 
+	`©omic_dec
+(&
+devi˚_›íed
+);
+
+40 
+	`moduÀ_put
+(
+THIS_MODULE
+);
+
+41 
+	`¥ötk
+(
+KERN_INFO
+ "Device closed successfully\n");
+
+43 
+	}
+}
+
+45 
+ssize_t
+ 
+	$demo_ªad
+(
+fûe
+ *
+fûp
+,
+
+46 *
+ubuf
+,
+
+47 
+size_t
+ 
+Àngth
+,
+
+48 
+loff_t
+ * 
+off£t
+)
+
+50 
+d_buf
+[100] = "mcdivyansh\n";
+
+53 if(
+	`c›y_to_u£r
+(
+ubuf
+, 
+d_buf
+, 5))
+
+54  -
+EINVAL
+;
+
+55 
+	`¥ötk
+(
+KERN_INFO
+ "InÑead \n");
+
+56 i‡(
+cou¡_ªad
+>5){
+
+57 
+	`¥ötk
+(
+KERN_INFO
+ "Ho gya bhai iskaÅoh\n");
+
+61 
+cou¡_ªad
+++;
+
+63 
+	}
+}
+
+65 
+ssize_t
+
+
+66 
+	$demo_wrôe
+(
+fûe
+ *
+fûp
+, c⁄° *
+buff
+, 
+size_t
+ 
+Àn
+, 
+loff_t
+ * 
+off
+)
+
+68 if(
+	`c›y_‰om_u£r
+(
+d_buf
+, 
+buff
+, 
+Àn
+))
+
+69  -
+EINVAL
+;
+
+70 
+	`¥ötk
+(
+KERN_INFO
+ "In write\n");
+
+72 
+	}
+}
+
+74 
+fûe_›î©i⁄s
+ 
+	gf›s
+ = {
+
+75 .
+ªad
+ = 
+demo_ªad
+,
+
+76 .
+	gwrôe
+ = 
+demo_wrôe
+,
+
+77 .
+	g›í
+ = 
+demo_›í
+,
+
+78 .
+	gªÀa£
+ = 
+demo_ªÀa£
+,
+
+82 *
+	$demo_devnode
+(
+devi˚
+ *
+dev
+, 
+umode_t
+ *
+mode
+)
+
+84 i‡(
+mode
+ && 
+dev
+->
+devt
+ =
+	`MKDEV
+(
+maj‹
+, 0))
+
+85 *
+mode
+ = 0666;
+
+86  
+NULL
+;
+
+87 
+	}
+}
+
+89 
+	$öô_moduÀ
+()
+
+91 
+îr
+;
+
+92 
+	`¥ötk
+(
+KERN_INFO
+ "Hello kernel\n");
+
+94 
+maj‹
+ = 
+	`ªgi°î_chrdev
+(0, 
+DEVNAME
+, &
+f›s
+);
+
+95 
+îr
+ = 
+maj‹
+;
+
+96 i‡(
+îr
+ < 0) {
+
+97 
+	`¥ötk
+(
+KERN_ALERT
+ "Regi°îög ch¨ devi˚ faûed wôh %d\n", 
+maj‹
+);
+
+98 
+îr‹_ªgdev
+;
+
+101 
+demo_˛ass
+ = 
+	`˛ass_¸óã
+(
+THIS_MODULE
+, 
+DEVNAME
+);
+
+102 
+îr
+ = 
+	`PTR_ERR
+(
+demo_˛ass
+);
+
+103 i‡(
+	`IS_ERR
+(
+demo_˛ass
+))
+
+104 
+îr‹_˛ass
+;
+
+106 
+demo_˛ass
+->
+devnode
+ = 
+demo_devnode
+;
+
+108 
+demo_devi˚
+ = 
+	`devi˚_¸óã
+(
+demo_˛ass
+, 
+NULL
+,
+
+109 
+	`MKDEV
+(
+maj‹
+, 0),
+
+110 
+NULL
+, 
+DEVNAME
+);
+
+111 
+îr
+ = 
+	`PTR_ERR
+(
+demo_devi˚
+);
+
+112 i‡(
+	`IS_ERR
+(
+demo_devi˚
+))
+
+113 
+îr‹_devi˚
+;
+
+115 
+d_buf
+ = 
+	`kzÆloc
+(4096, 
+GFP_KERNEL
+);
+
+116 
+	`¥ötk
+(
+KERN_INFO
+ "I wa†assig√d maj‹Çumbî %d. TÿèlkÅo\n", 
+maj‹
+);
+
+117 
+	`©omic_£t
+(&
+devi˚_›íed
+, 0);
+
+122 
+îr‹_devi˚
+:
+
+123 
+	`˛ass_de°roy
+(
+demo_˛ass
+);
+
+124 
+îr‹_˛ass
+:
+
+125 
+	`uƒegi°î_chrdev
+(
+maj‹
+, 
+DEVNAME
+);
+
+126 
+îr‹_ªgdev
+:
+
+127  
+îr
+;
+
+128 
+	}
+}
+
+130 
+	$˛ónup_moduÀ
+()
+
+132 
+	`k‰ì
+(
+d_buf
+);
+
+133 
+	`devi˚_de°roy
+(
+demo_˛ass
+, 
+	`MKDEV
+(
+maj‹
+, 0));
+
+134 
+	`˛ass_de°roy
+(
+demo_˛ass
+);
+
+135 
+	`uƒegi°î_chrdev
+(
+maj‹
+, 
+DEVNAME
+);
+
+136 
+	`¥ötk
+(
+KERN_INFO
+ "Goodbye kernel\n");
+
+137 
+	}
+}
+
+139 
+MODULE_AUTHOR
+("deba@cse.iitk.ac.in");
+
+140 
+MODULE_LICENSE
+("GPL");
+
+141 
+MODULE_DESCRIPTION
+("Demo modules");
+
+	@chdev/simplecdev.mod.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	#INCLUDE_VERMAGIC
+
+
+	)
+
+3 
+	~<löux/buûd-ß….h
+>
+
+4 
+	~<löux/ñ‚Ÿe-…o.h
+>
+
+5 
+	~<löux/exp‹t-öã∫Æ.h
+>
+
+6 
+	~<löux/vîmagic.h
+>
+
+7 
+	~<löux/compûî.h
+>
+
+9 
+	gBUILD_SALT
+;
+
+10 
+	gBUILD_LTO_INFO
+;
+
+12 
+MODULE_INFO
+(
+vîmagic
+, 
+VERMAGIC_STRING
+);
+
+13 
+MODULE_INFO
+(
+«me
+, 
+KBUILD_MODNAME
+);
+
+15 
+__visibÀ
+ 
+moduÀ
+ 
+__this_moduÀ
+
+
+16 
+__£˘i⁄
+(".gnu.linkonce.this_module") = {
+
+17 .
+«me
+ = 
+KBUILD_MODNAME
+,
+
+18 .
+	göô
+ = 
+öô_moduÀ
+,
+
+19 #ifde‡
+CONFIG_MODULE_UNLOAD
+
+
+20 .
+	gexô
+ = 
+˛ónup_moduÀ
+,
+
+22 .
+	g¨ch
+ = 
+MODULE_ARCH_INIT
+,
+
+25 #ifde‡
+CONFIG_RETPOLINE
+
+
+26 
+MODULE_INFO
+(
+ªçﬁöe
+, "Y");
+
+30 c⁄° 
+modvîsi⁄_öfo
+ 
+	g____vîsi⁄s
+[]
+
+31 
+__u£d
+ 
+__£˘i⁄
+("__versions") = {
+
+53 
+MODULE_INFO
+(
+dïíds
+, "");
+
+56 
+MODULE_INFO
+(
+§cvîsi⁄
+, "A2FB9CB40E2190D8AD9E14B");
+
+	@chdev/testcdev.c
+
+1 
+	~<°dio.h
+>
+
+2 
+	~<°dlib.h
+>
+
+3 
+	~<°rög.h
+>
+
+4 
+	~<sys/f˙é.h
+>
+
+5 
+	~<sig«l.h
+>
+
+6 
+	~<sys/io˘l.h
+>
+
+7 
+	~<sys/mm™.h
+>
+
+8 
+	~<sys/uni°d.h
+>
+
+10 
+	$maö
+()
+
+12 
+rbuf
+[4096]= {0};
+
+14 
+fd
+ = 
+	`›í
+("/dev/democdev",
+O_RDWR
+);
+
+18 if(
+fd
+ < 0){
+
+19 
+	`≥º‹
+("open");
+
+20 
+	`exô
+(-1);
+
+24 if(
+	`wrôe
+(
+fd
+, "Hello CS614!", 12) < 0){
+
+25 
+	`≥º‹
+("write");
+
+26 
+	`exô
+(-1);
+
+30 if(
+	`ªad
+(
+fd
+, 
+rbuf
+, 4096) < 0){
+
+31 
+	`≥º‹
+("read");
+
+32 
+	`exô
+(-1);
+
+35 
+	`¥ötf
+("Ród: %s\n", 
+rbuf
+);
+
+36 
+	`˛o£
+(
+fd
+);
+
+38 
+	}
+}
+
+	@hello_mod/hello.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/kî√l.h
+>
+
+3 
+	~<löux/sched.h
+>
+
+5 
+	$öô_moduÀ
+()
+
+7 
+buf
+[16];
+
+8 
+	`gë_èsk_comm
+(
+buf
+, 
+cuºít
+);
+
+9 
+	`¥ötk
+(
+KERN_INFO
+ "Hñlÿkî√»‰om cs614,Åhi†i†thêaddôi⁄ o‡®√w moduÀ.\¿Thêöf‹m©i⁄†¨e:Öid = %dÇamê%s\n", 
+cuºít
+->
+pid
+, 
+buf
+);
+
+11 
+	}
+}
+
+13 
+	$˛ónup_moduÀ
+()
+
+15 
+buf
+[16];
+
+16 
+	`gë_èsk_comm
+(
+buf
+, 
+cuºít
+);
+
+17 
+	`¥ötk
+(
+KERN_INFO
+ "Goodbyêkî√l,ÅhêmoduÀ ha†bì¿dëached.\¿Thêöf‹m©i⁄†¨e:Öid = %dÇamê%s\n", 
+cuºít
+->
+pid
+, 
+buf
+);
+
+18 
+	}
+}
+
+19 
+MODULE_LICENSE
+("GPL");
+
+	@hello_mod/hello.mod.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	#INCLUDE_VERMAGIC
+
+
+	)
+
+3 
+	~<löux/buûd-ß….h
+>
+
+4 
+	~<löux/ñ‚Ÿe-…o.h
+>
+
+5 
+	~<löux/exp‹t-öã∫Æ.h
+>
+
+6 
+	~<löux/vîmagic.h
+>
+
+7 
+	~<löux/compûî.h
+>
+
+9 
+	gBUILD_SALT
+;
+
+10 
+	gBUILD_LTO_INFO
+;
+
+12 
+MODULE_INFO
+(
+vîmagic
+, 
+VERMAGIC_STRING
+);
+
+13 
+MODULE_INFO
+(
+«me
+, 
+KBUILD_MODNAME
+);
+
+15 
+__visibÀ
+ 
+moduÀ
+ 
+__this_moduÀ
+
+
+16 
+__£˘i⁄
+(".gnu.linkonce.this_module") = {
+
+17 .
+«me
+ = 
+KBUILD_MODNAME
+,
+
+18 .
+	göô
+ = 
+öô_moduÀ
+,
+
+19 #ifde‡
+CONFIG_MODULE_UNLOAD
+
+
+20 .
+	gexô
+ = 
+˛ónup_moduÀ
+,
+
+22 .
+	g¨ch
+ = 
+MODULE_ARCH_INIT
+,
+
+25 #ifde‡
+CONFIG_RETPOLINE
+
+
+26 
+MODULE_INFO
+(
+ªçﬁöe
+, "Y");
+
+30 c⁄° 
+modvîsi⁄_öfo
+ 
+	g____vîsi⁄s
+[]
+
+31 
+__u£d
+ 
+__£˘i⁄
+("__versions") = {
+
+41 
+MODULE_INFO
+(
+dïíds
+, "");
+
+44 
+MODULE_INFO
+(
+§cvîsi⁄
+, "9984B86EC77CD74DA4C8393");
+
+	@module_prog/chardev.c
+
+	@module_prog/hello1.c
+
+2 
+	~<löux/moduÀ.h
+>
+
+3 
+	~<löux/kî√l.h
+>
+
+5 
+MODULE_LICENSE
+("GPL");
+
+7 
+	$öô_moduÀ
+(){
+
+9 
+	`¥ötk
+("Hello World, IámÅheÇew module.\n");
+
+13 
+	}
+}
+
+15 
+	$˛ónup_moduÀ
+(){
+
+16 
+	`¥ötk
+("By kernel, see ya!\n");
+
+18 
+	}
+}
+
+	@traphook-sysfs/traphook.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/kî√l.h
+>
+
+3 
+	~<löux/sched.h
+>
+
+4 (*
+å≠_Áu…_hook
+)(
+±_ªgs
+ *
+ªgs
+, 
+îr‹_code
+, 
+å≠ƒ
+);
+
+5 
+íabÀd
+ = 0;
+
+7 
+	$my_h™dÀr
+(
+±_ªgs
+ *
+ªgs
+, 
+îr‹_code
+, 
+å≠ƒ
+)
+
+9 
+èsk_°ru˘
+ *
+tsk
+ = 
+cuºít
+;
+
+10 
+	`¥ötk
+(
+KERN_INFO
+ "GŸÅøp/Áu… %ld f‹Öid = %d @%lx\n", 
+å≠ƒ
+, 
+tsk
+->
+pid
+, 
+ªgs
+->
+ù
+);
+
+11 
+ªgs
+->
+ù
+ += 2;
+
+14 
+	}
+}
+
+15 
+ssize_t
+ 
+	$å≠hook_°©us
+(
+kobje˘
+ *
+kobj
+,
+
+16 
+kobj_©åibuã
+ *
+©å
+, *
+buf
+)
+
+18  
+	`•rötf
+(
+buf
+, "%d\n", 
+íabÀd
+);
+
+19 
+	}
+}
+
+21 
+ssize_t
+ 
+	$å≠hook_£t
+(
+kobje˘
+ *
+kobj
+,
+
+22 
+kobj_©åibuã
+ *
+©å
+,
+
+23 c⁄° *
+buf
+, 
+size_t
+ 
+cou¡
+)
+
+25 
+√wvÆ
+;
+
+26 
+îr
+ = 
+	`k°πoöt
+(
+buf
+, 10, &
+√wvÆ
+);
+
+27 i‡(
+îr
+ || 
+√wvÆ
+ < 0 ||Çewval > 1 )
+
+28  -
+EINVAL
+;
+
+30 if(
+íabÀd
+ && !
+√wvÆ
+)
+
+31 
+å≠_Áu…_hook
+ = 
+NULL
+;
+
+32 if(!
+íabÀd
+ && 
+√wvÆ
+)
+
+33 
+å≠_Áu…_hook
+ = &
+my_h™dÀr
+;
+
+34 
+íabÀd
+ = 
+√wvÆ
+;
+
+36  
+cou¡
+;
+
+37 
+	}
+}
+
+39 
+kobj_©åibuã
+ 
+	gå≠hook_©åibuã
+ = 
+__ATTR
+(
+å≠hook
+, 0644, 
+å≠hook_°©us
+, 
+å≠hook_£t
+);
+
+40 
+©åibuã
+ *
+	gå≠hook_©ås
+[] = {
+
+41 &
+å≠hook_©åibuã
+.
+©å
+,
+
+42 
+NULL
+,
+
+44 
+©åibuã_group
+ 
+	gå≠hook_©å_group
+ = {
+
+45 .
+©ås
+ = 
+å≠hook_©ås
+,
+
+46 .
+	g«me
+ = "cs614hook",
+
+49 
+	$öô_moduÀ
+()
+
+51 
+ªt
+ = 
+	`sysfs_¸óã_group
+ (
+kî√l_kobj
+, &
+å≠hook_©å_group
+);
+
+52 if(
+	`u∆ikñy
+(
+ªt
+))
+
+53 
+	`¥ötk
+(
+KERN_INFO
+ "demo: can't create sysfs\n");
+
+55 
+	`¥ötk
+(
+KERN_INFO
+ "All setÅoÖlay\n");
+
+57 
+	}
+}
+
+59 
+	$˛ónup_moduÀ
+()
+
+61 
+	`sysfs_ªmove_group
+ (
+kî√l_kobj
+, &
+å≠hook_©å_group
+);
+
+62 
+å≠_Áu…_hook
+ = 
+NULL
+;
+
+63 
+	`¥ötk
+(
+KERN_INFO
+ "RemovedÅheÅrap hook handler\n");
+
+64 
+	}
+}
+
+65 
+MODULE_LICENSE
+("GPL");
+
+	@traphook/traphook.c
+
+1 
+	~<löux/moduÀ.h
+>
+
+2 
+	~<löux/kî√l.h
+>
+
+3 
+	~<löux/sched.h
+>
+
+4 (*
+å≠_Áu…_hook
+)(
+±_ªgs
+ *
+ªgs
+, 
+îr‹_code
+, 
+å≠ƒ
+);
+
+5 (*
+sysˇŒ_hook
+)(
+±_ªgs
+ *
+ªgs
+, 
+sy¢r
+);
+
+7 
+	$my_å≠_h™dÀr
+(
+±_ªgs
+ *
+ªgs
+, 
+îr‹_code
+, 
+å≠ƒ
+)
+
+9 
+•
+;
+
+10 
+èsk_°ru˘
+ *
+tsk
+ = 
+cuºít
+;
+
+11 
+	`¥ötk
+(
+KERN_INFO
+ "GŸÅøp/Áu… %ld f‹Öid = %d RIP#%lx RSP#%lx RBP#%lx\n", 
+å≠ƒ
+, 
+tsk
+->
+pid
+, 
+ªgs
+->
+ù
+,Ñegs->
+•
+,Ñegs->
+bp
+);
+
+12 
+asm
+ volatile("mov %%rsp, %0;"
+
+13 :"Ù"(
+•
+)
+
+17 
+	`¥ötk
+(
+KERN_INFO
+ "Kî√»RSP#%lxÑegs#%lx h™dÀr#%lx\n",
+•
+, ()
+ªgs
+, ()
+å≠_Áu…_hook
+);
+
+20 
+	}
+}
+
+21 
+	$my_sysˇŒ_h™dÀr
+(
+±_ªgs
+ *
+ªgs
+, 
+sy¢r
+)
+
+23 
+•
+;
+
+24 
+èsk_°ru˘
+ *
+tsk
+ = 
+cuºít
+;
+
+25 if(!
+	`memcmp
+(
+cuºít
+->
+comm
+, "a.out", 5Ë&& 
+sy¢r
+ == 1){
+
+26 
+	`¥ötk
+(
+KERN_INFO
+ "Sy°em cÆ»f‹Öid = %d RIP#%lx RSP#%lx RBP#%lx\n", 
+tsk
+->
+pid
+, 
+ªgs
+->
+ù
+,Ñegs->
+•
+,Ñegs->
+bp
+);
+
+27 
+asm
+ volatile("mov %%rsp, %0;"
+
+28 :"Ù"(
+•
+)
+
+32 
+	`¥ötk
+(
+KERN_INFO
+ "Kî√»RSP#%lxÑegs#%lx h™dÀr#%lx\n",
+•
+, ()
+ªgs
+, ()
+sysˇŒ_hook
+);
+
+35 
+	}
+}
+
+37 
+	$öô_moduÀ
+()
+
+39 
+	`¥ötk
+(
+KERN_INFO
+ "SettingÅheÅrap hook handler\n");
+
+40 
+å≠_Áu…_hook
+ = &
+my_å≠_h™dÀr
+;
+
+41 
+sysˇŒ_hook
+ = &
+my_sysˇŒ_h™dÀr
+;
+
+43 
+	}
+}
+
+45 
+	$˛ónup_moduÀ
+()
+
+47 
+å≠_Áu…_hook
+ = 
+NULL
+;
+
+48 
+sysˇŒ_hook
+ = 
+NULL
+;
+
+49 
+	`¥ötk
+(
+KERN_INFO
+ "RemovedÅheÅrap hook handler\n");
+
+50 
+	}
+}
+
+51 
+MODULE_LICENSE
+("GPL");
+
+	@
+1
+.
+0
+9
+188
+chdev/simplecdev.c
+chdev/simplecdev.mod.c
+chdev/testcdev.c
+hello_mod/hello.c
+hello_mod/hello.mod.c
+module_prog/chardev.c
+module_prog/hello1.c
+traphook-sysfs/traphook.c
+traphook/traphook.c

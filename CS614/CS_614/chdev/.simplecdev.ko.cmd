@@ -1,0 +1,1 @@
+cmd_/home/divyansh/Desktop/CS_614/chdev/simplecdev.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/divyansh/Desktop/CS_614/chdev/simplecdev.ko /home/divyansh/Desktop/CS_614/chdev/simplecdev.o /home/divyansh/Desktop/CS_614/chdev/simplecdev.mod.o;  true

@@ -1,0 +1,169 @@
+/* Don't count the price you are paying */
+
+%{
+
+void yyerror(char *s);
+int yylex();
+extern char* yytext;
+extern int yylineno;
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+/* Global variables to maintain the counts */
+
+int num_qs = 0;
+int singles_qs = 0;
+int multis_qs = 0;
+int ans_choices = 0;
+int corr_choice = 0;
+int total_marks = 0;
+
+int markwiseQuestions[8];
+void Increment_mw_Qs(int marks);
+void print_info();
+
+int temp_choice_count = 0;
+int temp_correct_count = 0;
+
+/* Types of error to handle */
+#define close_missing
+#define open_missing
+#define marks_not_quoted
+#define marks_bound_error
+#define less_choices
+#define more_choices
+
+%}
+
+
+%union { int num; char* str;}
+
+%token Quiz_Open
+%token Quiz_Close
+
+%token <num> Single_Open
+%token Single_Close
+
+%token <num> Multi_Open
+%token Multi_Close
+
+/*%token Question*/
+%token Choice
+%token Correct
+
+%start line
+
+%%
+
+line : Quiz_Open QS Quiz_Close						{;}
+	;
+
+QS : SCQ QS											{;}
+	| MCQ QS										{;}
+	;
+
+QS : %empty											{ /*printf(" Empty Production here\n")*/;}
+	;
+
+SCQ : Single_Open E Single_Close			{	
+													/*	printf("Current at line:%d\n",yylineno);
+														printf("#Choice: %d\n",temp_choice_count);
+														printf("#Correct: %d\n", temp_correct_count);
+														*/
+												if(temp_choice_count<3 || temp_choice_count>4){
+													printf("Choice count error for Singleselect ending at line no: %d\n",yylineno);
+													return 0;
+												}
+												if(temp_correct_count!=1){
+
+												printf("Correct count more than 1 for Singleselect ending at line no: %d\n",yylineno);
+												return 0;
+												}
+														temp_choice_count = 0;
+														temp_correct_count = 0;
+												num_qs++;
+												singles_qs++;
+												Increment_mw_Qs($1);
+												total_marks+= $1;}
+	;
+
+MCQ : Multi_Open E Multi_Close				{			/*
+														printf("Current at line:%d\n",yylineno);
+														printf("#Choice: %d\n",temp_choice_count);
+														printf("#Correct: %d\n", temp_correct_count);
+														*/
+
+												if(temp_choice_count<3 || temp_choice_count>4){
+													printf("Choice count error for Multiselect ending at line no: %d\n",yylineno);
+													return 0;
+												}
+
+												if(temp_correct_count > temp_choice_count){
+													printf("Too many correct choices for Multiselect ending at line no: %d\n",yylineno);
+												}
+														temp_choice_count = 0;
+														temp_correct_count = 0;
+														num_qs++;
+														multis_qs++;
+														Increment_mw_Qs($1);
+														total_marks+= $1; }
+	;
+
+E : Choice E										{temp_choice_count++; ans_choices++;}
+	| Correct E										{temp_correct_count++; corr_choice++;}
+	;
+
+E : %empty											{ /*printf(" Empty production here\n")*/;}
+
+%%
+
+
+void Increment_mw_Qs(int marks){
+	markwiseQuestions[marks-1]++;
+	return ;
+}
+
+void print_info()
+{
+
+	printf("#Number: %d\n",num_qs);
+	printf("#Single_qs: %d\n",singles_qs);
+	printf("#Multi_qs: %d\n",multis_qs);
+	printf("#Ans_choice: %d\n",ans_choices);
+	printf("#Correct_choice: %d\n",corr_choice);
+	printf("#Total_marks: %d\n",total_marks);
+
+	for(int i=0; i<8; i++){
+		printf("#Question of %d marks: %d\n",i+1,markwiseQuestions[i]);
+	}
+	return;
+}
+
+#define close_missing
+#define open_missing
+#define marks_not_quoted
+#define marks_bound_error
+#define less_choices
+#define more_choices
+
+void yyerror(char* s){
+//	fprintf(stderr, "In line no: %d found %s\n",yylineno,s);
+	return ;
+}
+
+int main(){
+
+	/*initializing markwise questions*/
+	for(int i=0; i<8; i++){
+		markwiseQuestions[i]=0;
+	}
+
+	printf("Parsing started...\n");
+	yyparse();
+	print_info();
+	printf("Found %s at line %d\n",yytext,yylineno);
+	printf("Returned from yyparse here\n"); return 0;
+}
+
+

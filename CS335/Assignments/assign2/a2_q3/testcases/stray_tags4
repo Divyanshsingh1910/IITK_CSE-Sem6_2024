@@ -1,0 +1,33 @@
+<qUiz>
+
+Who is PM of Indiann
+nnn?
+<choice> Modi </choice>
+<choice> Dhoni </choice>
+<choice> Virat </choice>
+<Correct> Modi </Correct>
+</singleselect>
+
+
+
+				<multiselect marks="6">
+Who is PM of Indian?
+<choice> Modi
+</choice>
+<choice> Dhoni </choice>	<choice> Virat </choice>
+<correct>
+Modi
+</correct>
+</Multiselect>
+
+<singleselect marks="2">
+Who is the director of iitk?
+<choice> puru </choice>
+<choice> bisu </choice>
+<choice> lion </choice>
+<correct> puru </correct>
+</singleselect>
+</QUIZ>
+
+
+error: missing opening  tag of singleselect - line 9

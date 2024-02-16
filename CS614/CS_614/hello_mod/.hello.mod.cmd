@@ -1,0 +1,1 @@
+cmd_/home/divyansh/Desktop/CS_614/hello_mod/hello.mod := printf '%s\n'   hello.o | awk '!x[$$0]++ { print("/home/divyansh/Desktop/CS_614/hello_mod/"$$0) }' > /home/divyansh/Desktop/CS_614/hello_mod/hello.mod

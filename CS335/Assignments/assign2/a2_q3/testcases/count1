@@ -1,0 +1,23 @@
+<qUiz>
+<		singleselect		 marks=	"	2">
+Who is PM of Indiann
+nnn?
+<choice> Modi </choice>
+<choice> Dhoni </choice>
+<choice> Virat </choice>
+<Correct> Modi </Correct>
+<Correct> Modi </Correct>
+</singleselect>
+
+
+
+				<multiselect marks="6">
+Who is PM of Indian?
+<choice> Modi
+</choice>
+<choice> Dhoni </choice>	<choice> Virat </choice>
+<Correct> Modi </correct>
+</Multiselect>
+</QUIZ>
+
+error for singleselect at line 2

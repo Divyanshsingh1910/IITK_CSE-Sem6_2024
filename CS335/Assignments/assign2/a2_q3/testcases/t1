@@ -1,0 +1,24 @@
+<quiz>
+	
+	<	singleselect	marks = " 1">
+		How many grand slams has Roger Federer won?
+		<choice>24</choice>
+		<choice>24</choice>
+		<choice> 20</choice>
+		<choice>22</CHOICE>
+	<correct>20</correct>
+	</singleselect>
+	
+	<multiselect marks="2">
+		Who is the husband of Sania Mirza?
+		<choice> Malik </choice>
+	< multiselect marks="3 ">
+		Select CSS Frameworks.
+		<choice>Bootstrap</choice> ply13
+		<Choice> Tailwind </choice> ply14
+		<Choice> Tailwind </choice> ply14
+	<correct>Bootstrap</correct>
+	<correct> Bulma</correct>
+	</multiselect>
+
+</quiz>

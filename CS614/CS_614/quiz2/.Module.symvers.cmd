@@ -1,0 +1,1 @@
+cmd_/home/divyansh/Desktop/CS_614/quiz2/Module.symvers :=  sed 's/ko$$/o/'  /home/divyansh/Desktop/CS_614/quiz2/modules.order | scripts/mod/modpost      -o /home/divyansh/Desktop/CS_614/quiz2/Module.symvers -e -i Module.symvers -T - 
