@@ -1,1 +1,0 @@
-cmd_/home/divyansh/Desktop/CS_614/traphook/traphook.mod := printf '%s\n'   traphook.o | awk '!x[$$0]++ { print("/home/divyansh/Desktop/CS_614/traphook/"$$0) }' > /home/divyansh/Desktop/CS_614/traphook/traphook.mod

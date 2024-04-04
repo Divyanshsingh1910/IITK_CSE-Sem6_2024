@@ -1,1 +1,0 @@
-cmd_/home/divyansh/Desktop/CS_614/chdev/simplecdev.mod := printf '%s\n'   simplecdev.o | awk '!x[$$0]++ { print("/home/divyansh/Desktop/CS_614/chdev/"$$0) }' > /home/divyansh/Desktop/CS_614/chdev/simplecdev.mod

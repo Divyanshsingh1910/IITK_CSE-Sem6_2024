@@ -1,1 +1,0 @@
-cmd_/home/divyansh/Desktop/CS_614/chdev/Module.symvers :=  sed 's/ko$$/o/'  /home/divyansh/Desktop/CS_614/chdev/modules.order | scripts/mod/modpost -m -a    -o /home/divyansh/Desktop/CS_614/chdev/Module.symvers -e -i Module.symvers -T - 
