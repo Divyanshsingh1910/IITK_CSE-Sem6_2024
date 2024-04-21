@@ -1,0 +1,23 @@
+from socket import *
+import threading
+
+
+def handle_client(conn, addr):
+    print("Connection from", addr, "is established\n")
+    sentence = connectionSocket.recv(1024).decode()
+    capitalizedSentence = sentence.upper()
+    connectionSocket.send(capitalizedSentence.encode())
+    connectionSocket.close()
+
+serverPort = 12000
+serverSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)
+serverSocket.bind(("localhost", serverPort))
+serverSocket.listen()
+print ("The server is ready to receive")
+
+while True:
+    connectionSocket, addr = serverSocket.accept()
+    thread = threading.Thread(target=handle_client, args=(connectionSocket, addr))
+    thread.start()
+    print(f"[ACTIVE CONNECTIONS] {threading.active_count() - 1}")
+
