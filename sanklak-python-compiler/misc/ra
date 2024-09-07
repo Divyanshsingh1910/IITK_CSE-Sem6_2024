@@ -1,0 +1,7 @@
+#!/bin/bash 
+
+gcc -c -g final.s 
+
+gcc -o final final.o
+
+./final

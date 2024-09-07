@@ -1,0 +1,6 @@
+#!/bin/bash
+./python $1
+./ra > actual_output.txt
+python3 $1 > expected_output.txt
+
+diff actual_output.txt expected_output.txt

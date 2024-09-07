@@ -1,0 +1,6 @@
+#!/bin/bash 
+set -e
+./python $1
+gcc -c -g final.s 
+gcc -o asm final.o
+./asm
